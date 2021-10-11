@@ -12,16 +12,7 @@ class PopupScreen extends StatefulWidget {
 }
 
 class _PopupScreenState extends State<PopupScreen> {
-  //URL Navigate
 
-  Text _buildRatingStars(int rating) {
-    String stars = '';
-    for (int i = 0; i < rating; i++) {
-      stars += '⭐ ';
-    }
-    stars.trim();
-    return Text(stars);
-  }
 
 
   @override
@@ -68,22 +59,6 @@ class _PopupScreenState extends State<PopupScreen> {
                       color: Colors.black,
                       onPressed: () => Navigator.pop(context),
                     ),
-                    // Row(
-                    //   children: <Widget>[
-                    //     IconButton(
-                    //       icon: Icon(Icons.search),
-                    //       iconSize: 30.0,
-                    //       color: Colors.black,
-                    //       onPressed: () => Navigator.pop(context),
-                    //     ),
-                    //     IconButton(
-                    //       icon: Icon(FontAwesomeIcons.sortAmountDown),
-                    //       iconSize: 25.0,
-                    //       color: Colors.black,
-                    //       onPressed: () => Navigator.pop(context),
-                    //     ),
-                    //   ],
-                    // ),
                   ],
                 ),
               ),
@@ -111,8 +86,7 @@ class _PopupScreenState extends State<PopupScreen> {
                         ),
                         SizedBox(width: 5.0),
                         Text(
-                          "Recommended Resturants",
-                          //widget.destination.country,
+                          "Info Page",
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 20.0,
@@ -123,20 +97,6 @@ class _PopupScreenState extends State<PopupScreen> {
                   ],
                 ),
               ),
-              // Positioned(
-              //   right: 20.0,
-              //   bottom: 20.0,
-              //   child: IconButton(
-              //     onPressed: (){
-              //        _LaunchUniversalLinkIos(_launchUrl);
-              //     }, //launch hanna
-              //     icon: Icon(
-              //       Icons.navigation,
-              //       color: Colors.white,
-              //       size: 25.0,
-              //     ),
-              //   ),
-              // ),
             ],
           ), 
           Stack(children: [
