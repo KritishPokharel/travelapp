@@ -55,7 +55,7 @@ class _StartState extends State<Start> {
               height: MediaQuery.of(context).size.height*0.7,
               child: Image(
                 image: AssetImage("assets/images/sathii.png"),
-                fit: BoxFit.contain,
+                fit: BoxFit.fitWidth,
               ),
             ),
             //SizedBox(height: 20),
@@ -91,13 +91,13 @@ class _StartState extends State<Start> {
                     child: Text(
                       'LOGIN',
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 20.5,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),
                     ),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(0),
+                      borderRadius: BorderRadius.circular(3.0)
                     ),
                     color: Colors.blue),
                 SizedBox(width: 20.0),
@@ -109,7 +109,7 @@ class _StartState extends State<Start> {
                     );
                     },
                     child: Text(
-                      'REGISTER',
+                      'Sign Up',
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -117,7 +117,7 @@ class _StartState extends State<Start> {
                       ),
                     ),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(0),
+                      borderRadius: BorderRadius.circular(4.0),
                     ),
                     color: Colors.blue),
               ],

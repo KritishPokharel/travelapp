@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_travel_ui/functions/navigation.dart';
 import 'package:flutter_travel_ui/models/hotel_model.dart';
 
 class HotelCarousel extends StatelessWidget {
@@ -7,13 +8,14 @@ class HotelCarousel extends StatelessWidget {
     return Column(
       children: <Widget>[
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.0),
+          padding: EdgeInsets.only(left: 20.0,right: 10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text(
                 'Hiking and Cycling',
                 style: TextStyle(
+                  color: Colors.white,
                   fontSize: 22.0,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 1.5,
@@ -24,7 +26,7 @@ class HotelCarousel extends StatelessWidget {
                 child: Text(
                   'See All',
                   style: TextStyle(
-                    color: Theme.of(context).primaryColor,
+                    color: Color(0XFFB1B7EC),
                     fontSize: 16.0,
                     fontWeight: FontWeight.w600,
                     letterSpacing: 1.0,
@@ -43,7 +45,8 @@ class HotelCarousel extends StatelessWidget {
               Hotel hotel = hotels[index];
               return GestureDetector(
                 onTap: (){
-                  print(hotel.link);
+                  
+                    launchUniversalLinkIos(hotel.link);
                 },
                 child: Container(
                   margin: EdgeInsets.all(10.0),
@@ -57,7 +60,7 @@ class HotelCarousel extends StatelessWidget {
                           height: 120.0,
                           width: 240.0,
                           decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: Color(0XFFB1B7EC),
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: Padding(
@@ -77,7 +80,7 @@ class HotelCarousel extends StatelessWidget {
                                 Text(
                                   hotel.visitime,
                                   style: TextStyle(
-                                    color: Colors.grey,
+                                    color: Colors.black,
                                   ),
                                 ),
                                 SizedBox(height: 2.0),
@@ -85,7 +88,7 @@ class HotelCarousel extends StatelessWidget {
                                   hotel.walkingtime,
                                   //'\$${hotel.price} / night',
                                   style: TextStyle(
-                                    color: Colors.grey
+                                    color: Colors.black
                                   ),
                                 ),
                               ],

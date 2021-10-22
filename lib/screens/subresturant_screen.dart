@@ -35,7 +35,7 @@ class _SubResturantScreenState extends State<SubResturantScreen> {
             children: <Widget>[
               Container(
                 //margin: EdgeInsets.only(top: 80),
-                height: MediaQuery.of(context).size.width * 0.7,
+                height: MediaQuery.of(context).size.width * 0.85,
                 decoration: BoxDecoration(
                   //borderRadius: BorderRadius.circular(30.0),
                   boxShadow: [
@@ -49,7 +49,7 @@ class _SubResturantScreenState extends State<SubResturantScreen> {
                 //child: Hero(
                 //tag: widget.destination.imageUrl,
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(30.0),
+                  borderRadius: BorderRadius.only(bottomRight: Radius.circular(18),bottomLeft: Radius.circular(18)),
                   child: Image(
                     image: AssetImage(widget.destination.subresturantimageurl),
                     fit: BoxFit.cover,
@@ -153,7 +153,7 @@ class _SubResturantScreenState extends State<SubResturantScreen> {
                       height: 180.0,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Color(0xFFB1B7EC),
                         borderRadius: BorderRadius.circular(20.0),
                       ),
                       child: Padding(
@@ -214,7 +214,7 @@ class _SubResturantScreenState extends State<SubResturantScreen> {
                               child: Text(
                                 subresturant.type,
                                 style: TextStyle(
-                                  color: Colors.grey,
+                                  color: Colors.black,
                                 ),
                               ),
                             ),
@@ -238,7 +238,7 @@ class _SubResturantScreenState extends State<SubResturantScreen> {
                                 SizedBox(width: 5.0),
                                   Container(
                                     padding: EdgeInsets.all(5.0),
-                                    width: 70.0,
+                                    width: 80.0,
                                     //height: 35,
                                     decoration: BoxDecoration(
                                       color: Theme.of(context).accentColor,
@@ -259,13 +259,13 @@ class _SubResturantScreenState extends State<SubResturantScreen> {
                       ),
                     ),
                     Positioned(
-                      left: 20.0,
+                      left: 15.0,
                       top: 15.0,
                       bottom: 15.0,
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20.0),
                         child: Image(
-                          width: 110.0,
+                          width: 115.0,
                           image: AssetImage(
                             subresturant.imageUrl,
                           ),

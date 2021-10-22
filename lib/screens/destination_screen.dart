@@ -52,7 +52,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
                 child: Hero(
                   tag: widget.destination.imageUrl,
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(30.0),
+                    borderRadius: BorderRadius.only(bottomRight: Radius.circular(18),bottomLeft: Radius.circular(18)),
                     child: Image(
                       image: AssetImage(widget.destination.imageUrl),
                       fit: BoxFit.cover,
@@ -98,7 +98,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
                 ),
               ),
               Positioned(
-                left: 20.0,
+                left: 15.0,
                 bottom: 20.0,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -134,7 +134,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
                 ),
               ),
               Positioned(
-                right: 20.0,
+                right: 15.0,
                 bottom: 20.0,
                 child: IconButton(
                   onPressed: () {
@@ -163,7 +163,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
                       height: 170.0,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Color(0xFFB1B7EC),
                         borderRadius: BorderRadius.circular(20.0),
                       ),
                       child: Padding(
@@ -207,39 +207,36 @@ class _DestinationScreenState extends State<DestinationScreen> {
                                 ),
                               ],
                             ),
+                            SizedBox(height: 10,),
                             Text(
                               activity.type,
                               style: TextStyle(
-                                color: Colors.grey,
+                                color: Colors.black,
                               ),
                             ),
                            // _buildRatingStars(activity.rating),
-                            SizedBox(height: 10.0),
+                            SizedBox(height: 13.0),
                             Row(
                               children: <Widget>[
+                                // Container(
+                                //   padding: EdgeInsets.all(5.0),
+                                //   width: 70.0,
+                                //   decoration: BoxDecoration(
+                                //     color: Theme.of(context).accentColor,
+                                //     borderRadius: BorderRadius.circular(10.0),
+                                //   ),
+                                //   alignment: Alignment.center,
+                                //   // child: Text(
+                                //   //   activity.startTimes[0],
+                                //   // ),
+                                // ),
+                                //SizedBox(width: 10.0),
                                 Container(
-                                  padding: EdgeInsets.all(5.0),
-                                  width: 70.0,
-                                  decoration: BoxDecoration(
-                                    color: Theme.of(context).accentColor,
-                                    borderRadius: BorderRadius.circular(10.0),
-                                  ),
-                                  alignment: Alignment.center,
-                                  // child: Text(
-                                  //   activity.startTimes[0],
-                                  // ),
-                                ),
-                                SizedBox(width: 10.0),
-                                Container(
-                                    padding: EdgeInsets.all(5.0),
-                                    width: 120.0,
-                                    height: 35,
-                                    // decoration: BoxDecoration(
-                                    //   color: Theme.of(context).accentColor,
-                                    //   borderRadius: BorderRadius.circular(10.0),
-                                    // ),
-                                    alignment: Alignment.center,
-                                    child: RaisedButton(
+                                  child: RaisedButton(
+                                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                      ),
+                                    color: Colors.black,
                                       onPressed: () => Navigator.push(
                                         context,
                                         MaterialPageRoute(
@@ -249,9 +246,11 @@ class _DestinationScreenState extends State<DestinationScreen> {
                                         ),
                                       ),
                                       child: Text(activity.button,
-                                      style: TextStyle(fontSize: 10),
+                                      style: TextStyle(fontSize: 10, color: Colors.white),
+                                    
                                       ),
                                     ),
+                                    
                                     //Text(
                                     //activity.startTimes[1],
                                     ),
@@ -262,13 +261,13 @@ class _DestinationScreenState extends State<DestinationScreen> {
                       ),
                     ),
                     Positioned(
-                      left: 20.0,
+                      left: 15.0,
                       top: 15.0,
                       bottom: 15.0,
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20.0),
                         child: Image(
-                          width: 110.0,
+                          width: 115.0,
                           image: AssetImage(
                             activity.imageUrl,
                           ),
@@ -276,13 +275,14 @@ class _DestinationScreenState extends State<DestinationScreen> {
                         ),
                       ),
                     ),
+                    SizedBox(height: 20,),
                   ]:index==1?<Widget>[
                     Container(
                       margin: EdgeInsets.fromLTRB(40.0, 5.0, 20.0, 5.0),
                       height: 170.0,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Color(0xFFB1B7EC),
                         borderRadius: BorderRadius.circular(20.0),
                       ),
                       child: Padding(
@@ -326,39 +326,36 @@ class _DestinationScreenState extends State<DestinationScreen> {
                                 ),
                               ],
                             ),
+                            SizedBox(height: 10,),
                             Text(
                               activity.type,
                               style: TextStyle(
-                                color: Colors.grey,
+                                color: Colors.black,
                               ),
                             ),
                            // _buildRatingStars(activity.rating),
                             SizedBox(height: 10.0),
                             Row(
                               children: <Widget>[
+                                // Container(
+                                //   padding: EdgeInsets.all(5.0),
+                                //   width: 70.0,
+                                //   decoration: BoxDecoration(
+                                //     color: Theme.of(context).accentColor,
+                                //     borderRadius: BorderRadius.circular(10.0),
+                                //   ),
+                                //   alignment: Alignment.center,
+                                //   // child: Text(
+                                //   //   activity.startTimes[0],
+                                //   // ),
+                                // ),
+                                SizedBox(height: 10.0),
                                 Container(
-                                  padding: EdgeInsets.all(5.0),
-                                  width: 70.0,
-                                  decoration: BoxDecoration(
-                                    color: Theme.of(context).accentColor,
-                                    borderRadius: BorderRadius.circular(10.0),
-                                  ),
-                                  alignment: Alignment.center,
-                                  // child: Text(
-                                  //   activity.startTimes[0],
-                                  // ),
-                                ),
-                                SizedBox(width: 10.0),
-                                Container(
-                                    padding: EdgeInsets.all(5.0),
-                                    width: 120.0,
-                                    height: 35,
-                                    // decoration: BoxDecoration(
-                                    //   color: Theme.of(context).accentColor,
-                                    //   borderRadius: BorderRadius.circular(10.0),
-                                    // ),
-                                    alignment: Alignment.center,
                                     child: RaisedButton( 
+                                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                      ),
+                                    color: Colors.black,
                                       onPressed: () => Navigator.push(
                                         context,
                                         MaterialPageRoute(
@@ -368,7 +365,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
                                         ),
                                       ),
                                       child: Text(activity.button,
-                                      style: TextStyle(fontSize: 10)),
+                                      style: TextStyle(fontSize: 10,color: Colors.white)),
                                     ),
                                     //Text(
                                     //activity.startTimes[1],
@@ -380,13 +377,13 @@ class _DestinationScreenState extends State<DestinationScreen> {
                       ),
                     ),
                     Positioned(
-                      left: 20.0,
+                      left: 15.0,
                       top: 15.0,
                       bottom: 15.0,
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20.0),
                         child: Image(
-                          width: 110.0,
+                          width: 115.0,
                           image: AssetImage(
                             activity.imageUrl,
                           ),
@@ -394,13 +391,14 @@ class _DestinationScreenState extends State<DestinationScreen> {
                         ),
                       ),
                     ),
+                    SizedBox(height: 20,),
                   ]:<Widget>[
                     Container(
                       margin: EdgeInsets.fromLTRB(40.0, 5.0, 20.0, 5.0),
                       height: 170.0,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Color(0xFFB1B7EC),
                         borderRadius: BorderRadius.circular(20.0),
                       ),
                       child: Padding(
@@ -444,39 +442,43 @@ class _DestinationScreenState extends State<DestinationScreen> {
                                 ),
                               ],
                             ),
+                            SizedBox(height: 10.0),
                             Text(
                               activity.type,
                               style: TextStyle(
-                                color: Colors.grey,
+                                color: Colors.black,
                               ),
                             ),
                            // _buildRatingStars(activity.rating),
                             SizedBox(height: 10.0),
                             Row(
                               children: <Widget>[
+                                // Container(
+                                //   padding: EdgeInsets.all(5.0),
+                                //   width: 70.0,
+                                //   decoration: BoxDecoration(
+                                //     color: Theme.of(context).accentColor,
+                                //     borderRadius: BorderRadius.circular(10.0),
+                                //   ),
+                                //   alignment: Alignment.center,
+                                //   // child: Text(
+                                //   //   activity.startTimes[0],
+                                //   // ),
+                                // ),
+                                SizedBox(height: 10.0),
                                 Container(
-                                  padding: EdgeInsets.all(5.0),
-                                  width: 70.0,
-                                  decoration: BoxDecoration(
-                                    color: Theme.of(context).accentColor,
-                                    borderRadius: BorderRadius.circular(10.0),
-                                  ),
-                                  alignment: Alignment.center,
-                                  // child: Text(
-                                  //   activity.startTimes[0],
-                                  // ),
-                                ),
-                                SizedBox(width: 10.0),
-                                Container(
-                                    padding: EdgeInsets.all(5.0),
-                                    width: 120.0,
-                                    height: 35,
-                                    // decoration: BoxDecoration(
-                                    //   color: Theme.of(context).accentColor,
-                                    //   borderRadius: BorderRadius.circular(10.0),
-                                    // ),
-                                    alignment: Alignment.center,
+                                    // padding: EdgeInsets.all(5.0),
+                                    // width: 120.0,
+                                    // height: 35,
+                                    // // decoration: BoxDecoration(
+                                    // //   color: Theme.of(context).accentColor,
+                                    // //   borderRadius: BorderRadius.circular(10.0),
+                                    // // ),
+                                    // alignment: Alignment.center,
                                     child: RaisedButton(
+                                      color: Colors.black,
+                                      shape: RoundedRectangleBorder(
+                                       borderRadius: BorderRadius.circular(5.0), ),
                                       onPressed: () => Navigator.push(
                                         context,
                                         MaterialPageRoute(
@@ -486,7 +488,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
                                         ),
                                       ),
                                       child: Text(activity.button,
-                                      style: TextStyle(fontSize: 10)),
+                                      style: TextStyle(fontSize: 10,color: Colors.white)),
                                     ),
                                     //Text(
                                     //activity.startTimes[1],
@@ -498,13 +500,13 @@ class _DestinationScreenState extends State<DestinationScreen> {
                       ),
                     ),
                     Positioned(
-                      left: 20.0,
+                      left: 15.0,
                       top: 15.0,
                       bottom: 15.0,
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20.0),
                         child: Image(
-                          width: 110.0,
+                          width: 115.0,
                           image: AssetImage(
                             activity.imageUrl,
                           ),

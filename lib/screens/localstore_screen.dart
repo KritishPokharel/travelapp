@@ -37,7 +37,7 @@ class _localScreenState extends State<Localstores> {
             children: <Widget>[
               Container(
                 //margin: EdgeInsets.only(top: 80),
-                height: MediaQuery.of(context).size.width * 0.7,
+                height: MediaQuery.of(context).size.width * 0.85,
                 decoration: BoxDecoration(
                   //borderRadius: BorderRadius.circular(30.0),
                   boxShadow: [
@@ -51,7 +51,7 @@ class _localScreenState extends State<Localstores> {
                 //child: Hero(
                 //tag: widget.destination.imageUrl,
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(30.0),
+                  borderRadius: BorderRadius.only(bottomRight: Radius.circular(18),bottomLeft: Radius.circular(18)),
                   child: Image(
                     image: AssetImage(widget.destination.localstoreimageurl),
                     fit: BoxFit.cover,
@@ -155,7 +155,7 @@ class _localScreenState extends State<Localstores> {
                       height: 180.0,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Color(0xFFB1B7EC),
                         borderRadius: BorderRadius.circular(20.0),
                       ),
                       child: Padding(
@@ -216,7 +216,7 @@ class _localScreenState extends State<Localstores> {
                               child: Text(
                                 localstore.type,
                                 style: TextStyle(
-                                  color: Colors.grey,
+                                  color: Colors.black,
                                 ),
                               ),
                             ),

@@ -8,16 +8,18 @@ class DestinationCarousel extends StatelessWidget {
     return Column(
       children: <Widget>[
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.0),
+          padding: EdgeInsets.only(left: 20.0,right: 10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text(
                 'Top Destinations',
                 style: TextStyle(
+                  
                   fontSize: 22.0,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 1.5,
+                  color: Colors.white,
                 ),
               ),
               GestureDetector(
@@ -25,7 +27,7 @@ class DestinationCarousel extends StatelessWidget {
                 child: Text(
                   'See All',
                   style: TextStyle(
-                    color: Theme.of(context).primaryColor,
+                    color: Color(0XFFB1B7EC),
                     fontSize: 16.0,
                     fontWeight: FontWeight.w600,
                     letterSpacing: 1.0,
@@ -63,7 +65,7 @@ class DestinationCarousel extends StatelessWidget {
                           height: 140.0,
                           width: 200.0,
                           decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: Color(0xFFB1B7EC),
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: Padding(
@@ -76,6 +78,8 @@ class DestinationCarousel extends StatelessWidget {
                                   destination.city,
                                   //'${destination.activities.length} activities',
                                   style: TextStyle(
+                                    // fontFamily: 'Raleway',
+                                    // package: 'awesome_package',
                                     fontSize: 20.0,
                                     fontWeight: FontWeight.w600,
                                     letterSpacing: 1.2,
@@ -86,7 +90,9 @@ class DestinationCarousel extends StatelessWidget {
                                 Text(
                                   destination.description,
                                   style: TextStyle(
-                                    color: Colors.grey,
+                                    //  fontFamily: 'Raleway',
+                                    //  package: 'awesome_package',
+                                    color: Colors.black,
                                   ),
                                 ),
                               ],
@@ -126,30 +132,8 @@ class DestinationCarousel extends StatelessWidget {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
-                                  // Text(
-                                  //   destination.city,
-                                  //   style: TextStyle(
-                                  //     color: Colors.white,
-                                  //     fontSize: 20.0,
-                                  //     fontWeight: FontWeight.w600,
-                                  //     letterSpacing: 1.2,
-                                  //   ),
-                                  // ),
                                   Row(
                                     children: <Widget>[
-                                      // Icon(
-                                      //   FontAwesomeIcons.locationArrow,
-                                      //   size: 10.0,
-                                      //   color: Colors.white,
-                                      // ),
-                                      // SizedBox(width: 5.0),
-                                      // Text(
-                                      //   destination.country,
-                                      //   style: TextStyle(
-                                      //     fontSize: 15,
-                                      //     color: Colors.white,
-                                      //   ),
-                                      // ),
                                     ],
                                   ),
                                 ],

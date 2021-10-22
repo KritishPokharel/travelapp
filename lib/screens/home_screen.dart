@@ -61,6 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Text(
                   'What would you like to find?',
                   style: TextStyle(
+                    color: Colors.white,
                     fontSize: 30.0,
                     fontWeight: FontWeight.bold,
                   ),
@@ -94,10 +95,10 @@ class _HomeScreenState extends State<HomeScreen> {
               margin: EdgeInsets.only(left:20,right: 3),
               //height: 30,
               child: Image(
-                width:double.infinity,
+                width: double.infinity,
                 height:100,
-                fit: BoxFit.cover,
-                image:AssetImage('assets/images/banner.jpg'))),
+                fit: BoxFit.fill,
+                image:AssetImage('assets/images/banner.png'))),
             SizedBox(height: 20.0),
             HotelCarousel(),
 
@@ -105,6 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Color(0xFF444C8C),
         currentIndex: _currentTab,
         onTap: (int value) {
           setState(() {
@@ -116,6 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: Icon(
               Icons.home,
               size: 30.0,
+              color: Color(0xFFB1B7EC),
             ),
             title: SizedBox.shrink(),
           ),

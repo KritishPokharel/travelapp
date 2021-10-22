@@ -138,7 +138,7 @@ class _SignUpState extends State<SignUp> {
                               fontWeight: FontWeight.bold)),
                       color: Colors.blue,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(0.0),
+                        borderRadius: BorderRadius.circular(3.0),
                       ),
                     ),
                     SizedBox(height: 10,),

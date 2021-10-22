@@ -1,18 +1,13 @@
 
-import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_travel_ui/models/location.dart';
 import 'package:flutter_travel_ui/models/user.dart';
 import 'package:flutter_travel_ui/page/edit_profile_page.dart';
-import 'package:flutter_travel_ui/screens/Login.dart';
 import 'package:flutter_travel_ui/screens/Start.dart';
 import 'package:flutter_travel_ui/utils/user_preferences.dart';
 import 'package:flutter_travel_ui/widgets/appbar_widget.dart';
-import 'package:flutter_travel_ui/widgets/button_widget.dart';
 import 'package:flutter_travel_ui/widgets/profile_widget.dart';
-
-import '../constants.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -30,12 +25,13 @@ class _ProfilePageState extends State<ProfilePage> {
     return Container(
       child: Builder(
           builder: (context) => Scaffold(
-            backgroundColor: Color(0xFFF3F5F7),
+            backgroundColor: Color(0xFFF444C8C),
             appBar: buildAppBar(context),
             body: ListView(
               physics: BouncingScrollPhysics(),
               children: [
                 ProfileWidget(
+                
                   imagePath: user.imagePath,
                   onClicked: () {
                     Navigator.of(context).push(
@@ -49,9 +45,9 @@ class _ProfilePageState extends State<ProfilePage> {
                 Center(child: buildLogOutButton()),
                 const SizedBox(height: 30),
                 buildAbout(user),
-                const SizedBox(height: 24),
+                const SizedBox(height: 26),
                 Container(
-                  margin: EdgeInsets.only(right:48,top: 10),
+                   alignment: Alignment.bottomCenter,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
@@ -72,30 +68,36 @@ class _ProfilePageState extends State<ProfilePage> {
         children: [
           Text(
             user.name,
-            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 24),
+            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 24,color: Colors.white),
           ),
           const SizedBox(height: 4),
           Text(
             user.email,
-            style: TextStyle(color: Colors.grey),
+            style: TextStyle(color: Colors.white),
           )
         ],
       );
 
   Widget buildLogOutButton() => FlatButton(
-    color: Colors.black,
+    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(3.0),
+                      ),
+    color: Color(0xFFFB1B7EC),
     onPressed: (){
                       Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => Start()),
                     );
-    }, child: Text("Logout", style: TextStyle(color: Colors.white), )
+    }, child: Text("Logout", style: TextStyle(color: Colors.black), )
     );
         
   Widget buildSaveButton() => FlatButton(
-    color: Colors.black,
+    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(3.0),
+                      ),
+    color: Color(0xFFFB1B7EC),
     onPressed: (){
 
-    }, child: Text("Save Changes", style: TextStyle(color: Colors.white), )
+    }, child: Text("Save Changes", style: TextStyle(color: Colors.black,fontWeight: FontWeight.w300), )
     );
         
 
@@ -108,18 +110,18 @@ class _ProfilePageState extends State<ProfilePage> {
               child:
                   Text(
                     'Notes',
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
+                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600,color: Colors.white),
                   ),
               ),
             const SizedBox(height: 5),
             Text(
               user.about,
-              style: TextStyle(fontSize: 16, height: 1.4),
+              style: TextStyle(fontSize: 16, height: 1.4,color: Colors.white),
             ),
             const SizedBox(height: 22),
             Container(
             child: Text("Selected Location: $value",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600,color: Colors.white),
             ),
             ),
             SizedBox(height: 15,),
@@ -128,7 +130,7 @@ class _ProfilePageState extends State<ProfilePage> {
               padding: EdgeInsets.symmetric(horizontal: 5,vertical: 3),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(9),
-                border: Border.all(color: Colors.black,width: 2),
+                border: Border.all(color: Color(0xFFFB1B7EC),width: 2),
               ),
               child: DropdownButtonHideUnderline(
                 child: new DropdownButton<String>(
@@ -136,7 +138,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   isDense: true,
                   value: value,
                   iconSize: 36,
-                  icon: Icon(Icons.arrow_drop_down,color: Colors.black,),
+                  icon: Icon(Icons.arrow_drop_down,color: Color(0xFFFB1B7EC),),
                   isExpanded: true,
                   items: items.map(buildMenuItem).toList(),
                   onChanged: (value) => setState(() => this.value = value),
@@ -154,7 +156,7 @@ class _ProfilePageState extends State<ProfilePage> {
             value: item,
             child: Text(
               item,
-              style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),
+              style: TextStyle(fontWeight: FontWeight.w800,fontSize: 15,color: Colors.black),
             ),
             );
 }

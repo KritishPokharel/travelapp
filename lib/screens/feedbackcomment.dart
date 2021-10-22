@@ -10,33 +10,33 @@ class _HomePageState extends State<HomePage> {
   var myFeedbackText = "COULD BE BETTER";
   var sliderValue = 0.0;
   IconData myFeedback = FontAwesomeIcons.sadTear;
-  Color myFeedbackColor = Colors.red;
+  Color myFeedbackColor = Color(0XFF444C8C);
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       body: Container(
-        color: Color(0xffE5E5E5),
+        color: Color(0xFFF444C8C),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
                     margin: EdgeInsets.only(left: 3,top: 6),
-                    child: IconButton(icon: Icon(Icons.arrow_back), onPressed:() => Navigator.pop(context)
+                    child: IconButton(icon: Icon(Icons.arrow_back,color: Colors.white,), onPressed:() => Navigator.pop(context)
                     ,iconSize: 25,)),
             Container(child:Padding(
               padding: const EdgeInsets.all(16.0),
               child: Container(child: Text("1. How happy are you with our work? Please Leave us Feedback!",
-                style: TextStyle(color: Colors.black, fontSize: 22.0,fontWeight:FontWeight.bold),)),
+                style: TextStyle(color: Colors.white, fontSize: 22.0,fontWeight:FontWeight.bold),)),
             ),),
             SizedBox(height: 10,),
             Container(
               child: Align(
                 child: Material(
-                  color: Colors.white,
+                  color: Color(0xFFB1B7EC),
                   elevation: 14.0,
                   borderRadius: BorderRadius.circular(24.0),
-                  shadowColor: Color(0x802196F3),
+                  shadowColor: Color(0xFFB1B7EC),
                   child: Container(
                       width: 350.0,
                       height: 450,
@@ -58,35 +58,35 @@ class _HomePageState extends State<HomePage> {
                             max: 10.0,
                             divisions: 5,
                             value: sliderValue,
-                            activeColor: Colors.black,
+                            activeColor: Color(0XFF444C8C),
                             //Color(0xffe05f2c) ,
-                            inactiveColor: Colors.blueGrey,
+                            inactiveColor: Color(0XFF444C8C),
                             onChanged: (newValue) {
                               setState(() {
                                 sliderValue = newValue;
                                 if (sliderValue >= 0.0 && sliderValue <= 2.0) {
                                   myFeedback = FontAwesomeIcons.sadTear;
-                                  myFeedbackColor = Colors.red;
+                                  myFeedbackColor = Color(0XFF444C8C);
                                   myFeedbackText = "COULD BE BETTER";
                                 }
                                 if (sliderValue >= 2.1 && sliderValue <= 4.0) {
                                   myFeedback = FontAwesomeIcons.frown;
-                                  myFeedbackColor = Colors.yellow;
+                                  myFeedbackColor = Color(0XFF444C8C);
                                   myFeedbackText = "BELOW AVERAGE";
                                 }
                                 if (sliderValue >= 4.1 && sliderValue <= 6.0) {
                                   myFeedback = FontAwesomeIcons.meh;
-                                  myFeedbackColor = Colors.amber;
+                                  myFeedbackColor = Color(0XFF444C8C);
                                   myFeedbackText = "NORMAL";
                                 }
                                 if (sliderValue >= 6.1 && sliderValue <= 8.0) {
                                   myFeedback = FontAwesomeIcons.smile;
-                                  myFeedbackColor = Colors.green;
+                                  myFeedbackColor = Color(0XFF444C8C);
                                   myFeedbackText = "GOOD";
                                 }
                                 if (sliderValue >= 8.1 && sliderValue <= 10.0) {
                                   myFeedback = FontAwesomeIcons.laugh;
-                                  myFeedbackColor = Colors.pink;
+                                  myFeedbackColor = Color(0XFF444C8C);
                                   myFeedbackText = "EXCELLENT";
                                 }
                               });
@@ -94,17 +94,19 @@ class _HomePageState extends State<HomePage> {
                           ),),
                         ),
                         Container(
+
                           margin: EdgeInsets.all(20),
       padding: EdgeInsets.all(18.0),
       decoration: BoxDecoration(
+        
         border: Border.all(color: Colors.black),
-        color: Colors.white,
+        color: Color(0XFF444C8C),
         borderRadius: BorderRadius.circular(12.0),
         boxShadow: [
           BoxShadow(
             blurRadius: 15,
             offset: const Offset(0.0, 15.0),
-            color: Color(0XFF303030).withAlpha(20)
+            color: Color(0XFF444C8C).withAlpha(20)
           )
         ]
       ),
@@ -117,7 +119,7 @@ class _HomePageState extends State<HomePage> {
           hintText: 'Additional comment',
           hintStyle: TextStyle(
             letterSpacing: 1,
-            color: Color(0XFFD9D9D9),
+            color: Colors.white,
           )
         ),
       ),
@@ -125,12 +127,12 @@ class _HomePageState extends State<HomePage> {
                         Padding(
                           padding: const EdgeInsets.all(1.0),
                           child: Container(
-                            margin: EdgeInsets.only(right: 14),
+                            //margin: EdgeInsets.only(right: 14),
                             child: Align(
-                            alignment: Alignment.bottomRight,
+                            alignment: Alignment.bottomCenter,
                             child: RaisedButton(
                               shape:RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
-                              color: Colors.black,
+                              color: Color(0XFF444C8C),
                               child: Text('Submit',
                                 style: TextStyle(color: Color(0xffffffff)),),
                               onPressed: () {

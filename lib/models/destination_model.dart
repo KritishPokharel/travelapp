@@ -235,7 +235,7 @@ List<SubResturant> thirddestinationsubresturants = [
 
 List<Activity> firstdestinationactivities = [
   Activity(
-    imageUrl: 'assets/images/bouddha_second.png',
+    imageUrl: 'assets/images/image2.png',
     name: 'SightSeeing',
     type: 'Explore Boudha to its fullest.',
     startTimes: ['9:00 am', '11:00 am'],
@@ -248,22 +248,22 @@ List<Activity> firstdestinationactivities = [
   Activity(
     imageUrl: 'assets/images/resturant.png',
     name: 'Restaurants',
-    type: 'Explore the hidden cuisines.',
+    type: 'Explore the hidden cuisines in Bouddha.',
     startTimes: ['11:00 pm', '1:00 pm'],
     rating: 4,
     price: 210,
-    button: 'Sub Resturants',
+    button: 'Explore',
   
 
   ),
     Activity(
-    imageUrl: 'assets/images/bouddha_second.png',
+    imageUrl: 'assets/images/bouddha_local.png',
     name: 'Local Stores',
-    type: 'Explore Boudha to its fullest.',
+    type: 'Explore hidden stores in Bouddha.',
     startTimes: ['9:00 am', '11:00 am'],
     rating: 5,
     price: 30,
-    button: 'Substores',
+    button: 'Explore',
   
     
   ),
