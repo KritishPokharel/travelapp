@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_travel_ui/screens/feedbackcomment.dart';
 import 'package:flutter_travel_ui/screens/home_screen.dart';
 import 'SignUp.dart';
 
@@ -73,18 +74,57 @@ class _LoginState extends State<Login> {
         child: Column(
           children: <Widget>[
             Container(
-              height: 400,
-              width: double.infinity,
-              child: Image(
-                image: AssetImage("assets/images/design.png"),
-                fit: BoxFit.fitWidth,
+             height: MediaQuery.of(context).size.height* 0.4,
+              width: MediaQuery.of(context).size.width,
+   
+              decoration: BoxDecoration(
+                           
+                image: DecorationImage(image: AssetImage("assets/images/design.png"),
+                fit: BoxFit.cover
+                )
               ),
+            
             ),
-            Container(
+             Container(
+              height:MediaQuery.of(context).size.height*0.07,
+              width: MediaQuery.of(context).size.width*0.7,
+
+child: Center(child:Text("Create an Account",
+style: TextStyle(color: Colors.white, 
+fontSize:20,
+fontWeight: FontWeight.w400),
+))
+              ),
+              
+            Padding(padding:EdgeInsets.only(top:MediaQuery.of(context).size.height*0.01,
+            left:MediaQuery.of(context).size.width* 0.06,
+            right:MediaQuery.of(context).size.width* 0.06,
+             ),child:
+            Column(children: [
+             Container(
+   height:MediaQuery.of(context).size.height* 0.04,
+      width: MediaQuery.of(context).size.width,
+ 
+child: Text(" Name",
+style: TextStyle(color: Colors.white, fontSize:18,
+
+fontWeight: FontWeight.w400),
+
+)
+
+             ),
+              
+              Container(
+                height:MediaQuery.of(context).size.height* 0.066,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(17),
+                  color: Color(0xffB1B7EC)
+                ),
               child: Form(
                 //key: _formKey,
                 child: Column(
                   children: <Widget>[
+                    
                      Container(
                       child: TextFormField(
                           // ignore: missing_return
@@ -92,23 +132,123 @@ class _LoginState extends State<Login> {
                             if (input.isEmpty) return 'Enter Name';
                           },
                           decoration: InputDecoration(
-                            fillColor: Colors.blue,
-                              labelText: 'Name',
-                              prefixIcon: Icon(Icons.people)),
+                           
+                            ),
                           onSaved: (input) => _name = input),
                     ),
+                    // Container(
+                    //   child: TextFormField(
+                    //       // ignore: missing_return
+                    //       validator: (input) {
+                    //         if (input.isEmpty) return 'Enter Email';
+                    //       },
+                    //       decoration: InputDecoration(
+                    //         fillColor: Colors.blue,
+                    //           labelText: 'Email',
+                    //           prefixIcon: Icon(Icons.email)),
+                    //       onSaved: (input) => _email = input),
+                    // ),
+                    // Container(
+                    //   child: TextFormField(
+                    //       // ignore: missing_return
+                    //       validator: (input) {
+                    //         if (input.length < 6)
+                    //           return 'Provide Minimum 6 Character';
+                    //       },
+                    //       decoration: InputDecoration(
+                    //         labelText: 'Password',
+                    //         prefixIcon: Icon(Icons.lock),
+                    //       ),
+                    //       obscureText: true,
+                    //       onSaved: (input) => _password = input),
+                    // ),
+                  
+                  ],
+                ),
+              ),
+            ),
+             SizedBox(height:5),
+            Container(
+   height:MediaQuery.of(context).size.height* 0.04,
+      width: MediaQuery.of(context).size.width,
+
+child: Text(" Email",
+style: TextStyle(color: Colors.white, fontSize:18,
+
+fontWeight: FontWeight.w400),
+
+)
+
+             ),
+              
+              Container(
+                height:MediaQuery.of(context).size.height* 0.066,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(17),
+                  color: Color(0xffB1B7EC)
+                ),
+              child: Form(
+                //key: _formKey,
+                child: Column(
+                  children: <Widget>[
+                    
+                   
                     Container(
                       child: TextFormField(
                           // ignore: missing_return
-                          validator: (input) {
-                            if (input.isEmpty) return 'Enter Email';
-                          },
+                         
                           decoration: InputDecoration(
                             fillColor: Colors.blue,
-                              labelText: 'Email',
-                              prefixIcon: Icon(Icons.email)),
+                              
+                             ),
                           onSaved: (input) => _email = input),
                     ),
+                    // Container(
+                    //   child: TextFormField(
+                    //       // ignore: missing_return
+                    //       validator: (input) {
+                    //         if (input.length < 6)
+                    //           return 'Provide Minimum 6 Character';
+                    //       },
+                    //       decoration: InputDecoration(
+                    //         labelText: 'Password',
+                    //         prefixIcon: Icon(Icons.lock),
+                    //       ),
+                    //       obscureText: true,
+                    //       onSaved: (input) => _password = input),
+                    // ),
+                  
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(height:5),
+            Container(
+   height:MediaQuery.of(context).size.height* 0.04,
+      width: MediaQuery.of(context).size.width,
+ 
+child: Text(" Password",
+style: TextStyle(color: Colors.white, fontSize:18,
+
+fontWeight: FontWeight.w400),
+
+)
+
+             ),
+              
+              Container(
+                height:MediaQuery.of(context).size.height* 0.066,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(17),
+                  color: Color(0xffB1B7EC)
+                ),
+              child: Form(
+                //key: _formKey,
+                child: Column(
+                  children: <Widget>[
+                    
+                   
+                    
                     Container(
                       child: TextFormField(
                           // ignore: missing_return
@@ -117,39 +257,53 @@ class _LoginState extends State<Login> {
                               return 'Provide Minimum 6 Character';
                           },
                           decoration: InputDecoration(
-                            labelText: 'Password',
-                            prefixIcon: Icon(Icons.lock),
+                           
                           ),
                           obscureText: true,
                           onSaved: (input) => _password = input),
                     ),
-                    SizedBox(height: 20),
-                    RaisedButton(
-                      padding: EdgeInsets.fromLTRB(70, 10, 70, 10),
-                      onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => HomeScreen()),
-                    );
-                  },
-                      child: Text('LOGIN',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.bold)),
-                      color: Colors.blue,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(0.0),
-                      ),
-                    )
+                  
                   ],
                 ),
               ),
             ),
-            SizedBox(height:10),
-            GestureDetector(
-              child: Text('Create an Account?', style: TextStyle(color: Colors.blue),),
-              onTap: navigateToSignUp,
-            )
+
+            ])),
+            SizedBox(height:30),
+             InkWell(
+                   onTap:() => Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (_) => HomeScreen()
+                                          ),
+                                        ),
+                                      
+                   child: Container(
+                    height: MediaQuery.of(context).size.height* 0.05,
+                    width: MediaQuery.of(context).size.height* 0.16,
+                    
+                  decoration: BoxDecoration(
+                    color:Color(0xffB1B7EC),
+                    borderRadius: BorderRadius.circular(20),
+                    
+                    boxShadow: [
+      BoxShadow(
+        color: Colors.black,
+        spreadRadius: 1,
+        blurRadius: 0,
+        offset: Offset(0, 1), // changes position of shadow
+      ),
+    ],
+
+
+                  ),
+                  child: Center(child: Text('Login',
+                  style: TextStyle(
+                    fontSize:16
+                  )
+                  ),),
+
+                  ))
           ],
         ),
       ),

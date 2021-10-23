@@ -25,7 +25,7 @@ class _PopupScreenState extends State<PopupScreen> {
             children: <Widget>[
               Container(
                 //margin: EdgeInsets.only(top: 80),
-                height: MediaQuery.of(context).size.height * 0.4,
+                height: MediaQuery.of(context).size.height * 0.5,
                 decoration: BoxDecoration(
                   //borderRadius: BorderRadius.circular(30.0),
                   boxShadow: [
@@ -39,29 +39,21 @@ class _PopupScreenState extends State<PopupScreen> {
                 //child: Hero(
                 //tag: widget.destination.imageUrl,
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(30.0),
+                  borderRadius: BorderRadius.only(bottomRight: Radius.circular(22),bottomLeft: Radius.circular(22)),
+
                   child: Image(
                     width: double.infinity,
-                    image: AssetImage(widget.destination.imageUrl),
-                    fit: BoxFit.cover,
+                    // image: AssetImage(widget.destination.imageUrl
+                    image: AssetImage('assets/images/boudha.png')
+                    ,
+                    fit: BoxFit.cover
+                    ),
+                
                   ),
                 ),
-              ),
+              
               //),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 40.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    IconButton(
-                      icon: Icon(Icons.arrow_back),
-                      iconSize: 30.0,
-                      color: Colors.black,
-                      onPressed: () => Navigator.pop(context),
-                    ),
-                  ],
-                ),
-              ),
+              
               Positioned(
                 left: 20.0,
                 bottom: 20.0,
@@ -77,89 +69,175 @@ class _PopupScreenState extends State<PopupScreen> {
                         letterSpacing: 1.2,
                       ),
                     ),
-                    Row(
-                      children: <Widget>[
-                        Icon(
-                          FontAwesomeIcons.locationArrow,
-                          size: 15.0,
-                          color: Colors.redAccent,
-                        ),
-                        SizedBox(width: 5.0),
-                        Text(
-                          "Info Page",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20.0,
-                          ),
-                        ),
-                      ],
-                    ),
+                  
                   ],
                 ),
               ),
             ],
           ), 
+          
           Stack(children: [
-            Container(
-              height: MediaQuery.of(context).size.height*0.55,
-                      margin: EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 5.0),
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20),
-                      ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    padding: EdgeInsets.only(bottom: 200),
-                    margin: EdgeInsets.only(left: 10,right: 10,top: 10),
-                    child: Text(destination.popuptext,
-                    textAlign: TextAlign.left,
-                    maxLines: 40,
-                    style: TextStyle(
-                                  fontSize: 10.0,
-                                  fontWeight: FontWeight.w600,
-                                  letterSpacing: 0.8,
-                                ),
-                                ),
-                                ),
-                  Container(
-                  margin: EdgeInsets.only(left: 10, right: 10),
-                  child: Text("Price: ${destination.price}",
-                  textAlign: TextAlign.left,
-                   style: TextStyle(
-                                  fontSize: 22.0,
-                                  fontWeight: FontWeight.w600,
-                                  letterSpacing: 1.2,
-                                ),
-                                ),
-                                ),
-                  Container(
-                    margin: EdgeInsets.only(left: 10, right: 10, top: 20),
-                    child: Text("Best Time to visit: ${destination.bestvisit}",
-                     textAlign: TextAlign.left,
-                   style: TextStyle(
-                                  fontSize: 22.0,
-                                  fontWeight: FontWeight.w600,
-                                  letterSpacing: 1.2,
-                                ),
-                                ) ,
-                                ),
-                   Container(
-                    margin: EdgeInsets.only(left: 10, right: 10, top: 20),
-                    child: Text("Measures and Precaution:${destination.Measures}",
-                     textAlign: TextAlign.left,
-                   style: TextStyle(
-                                  fontSize: 22.0,
-                                  fontWeight: FontWeight.w600,
-                                  letterSpacing: 1.2,
-                                ),
-                                ) ,
-                                )
-                ],
+            Row(children: [
+              Padding(padding: EdgeInsets.only(
+                left:  MediaQuery.of(context).size.width*0.05,
+                top: MediaQuery.of(context).size.height*0.02),
+              child:Container(
+                height: MediaQuery.of(context).size.height * 0.13,
+                width: MediaQuery.of(context).size.height* 0.15,
+                decoration: BoxDecoration(
+                  color:Color(0xffB1B7EC),
+                  borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+      BoxShadow(
+        color: Colors.black,
+        spreadRadius: 1,
+        blurRadius: 0,
+        offset: Offset(0, 1), // changes position of shadow
+      ),
+    ],
+
+
+
+                ),
+                child: Column(children: [
+                  Padding(padding: EdgeInsets.only(top: MediaQuery.of(context).size.height*0.03),
+                  child:Icon(Icons.attach_money,
+                  size: 25,
+                  ),
+                  
+                  ),
+                   Padding(padding: EdgeInsets.only(top: MediaQuery.of(context).size.height*0.01),
+                  child: Text('Price',
+                  style: TextStyle(
+                   
+                    fontSize:20,
+                    fontWeight: FontWeight.w500
+                  )
+                  )
+                  
+                  ),
+              
+
+
+
+                ],))
+
               ),
-          )
+
+Padding(padding: EdgeInsets.only(
+                left:  MediaQuery.of(context).size.width*0.05,
+                top: MediaQuery.of(context).size.height*0.02),
+              child:Container(
+                height: MediaQuery.of(context).size.height * 0.13,
+                width: MediaQuery.of(context).size.height* 0.15,
+                decoration: BoxDecoration(
+                  color:Color(0xffB1B7EC),
+                  borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+      BoxShadow(
+        color: Colors.black,
+        spreadRadius: 1,
+        blurRadius: 0,
+        offset: Offset(0, 1), // changes position of shadow
+      ),
+    ],
+
+
+
+                ),
+                child: Column(children: [
+                  Padding(padding: EdgeInsets.only(top: MediaQuery.of(context).size.height*0.03),
+                  child:Text('!',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w900,
+                    fontSize: 20
+                  )
+                  )
+                  
+                  ),
+                   Padding(padding: EdgeInsets.only(top: MediaQuery.of(context).size.height*0.01),
+                  child: Text('Precautions',
+                  style: TextStyle(
+                   
+                    fontSize:17,
+                    fontWeight: FontWeight.w500
+                  )
+                  )
+                  
+                  ),
+              
+
+
+
+                ],))
+
+              ),Padding(padding: EdgeInsets.only(
+                left:  MediaQuery.of(context).size.width*0.05,
+                top: MediaQuery.of(context).size.height*0.02),
+              child:Container(
+                height: MediaQuery.of(context).size.height * 0.13,
+                width: MediaQuery.of(context).size.height* 0.15,
+                decoration: BoxDecoration(
+                  color:Color(0xffB1B7EC),
+                  borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+      BoxShadow(
+        color: Colors.black,
+        spreadRadius: 1,
+        blurRadius: 0,
+        offset: Offset(0, 1), // changes position of shadow
+      ),
+    ],
+
+
+
+                ),
+                child: Column(children: [
+                  Padding(padding: EdgeInsets.only(top: MediaQuery.of(context).size.height*0.03),
+                  child:Icon(Icons.access_time_filled,
+                  size: 25,
+                  ),
+                  
+                  ),
+                   Padding(padding: EdgeInsets.only(top: MediaQuery.of(context).size.height*0.01),
+                  child: Text('Time',
+                  style: TextStyle(
+                   
+                    fontSize:20,
+                    fontWeight: FontWeight.w500
+                  )
+                  )
+                  
+                  ),
+              
+
+
+
+                ],))
+
+              ),
+              
+              
+
+            ],),
+SafeArea(child:
+            Padding(padding: EdgeInsets.only(
+              left:  MediaQuery.of(context).size.width*0.04,
+              right:MediaQuery.of(context).size.width*0.04,
+              top:MediaQuery.of(context).size.height*0.2),
+            child:Container(
+              child: Center(
+                child: Text("Boudha is a stupa in Kathmandu, Nepal. Located about 11 km from the center and northeastern outskirts of Kathmandu, its massive mandala makes it one of the largest spherical stupas in Nepal and the world. The influx of large populations of refugees from Tibet has seen the construction of over 50 gompas around Boudha.The stupa is on the ancient trade route from Tibet which enters the Kathmandu Valley by the village of Sankhu in the northeast corner and continues to the ancient and smaller stupa of Chabahil named Charumati Stupa (often called 'Little Boudhanath'). It then turns directly south, heading over the Bagmati River to Lalitpur, bypassing the main city of Kathmandu (which was built later).",
+                style:TextStyle(color:Colors.white),
+                )
+              ),
+
+            )
+            
+            )
+
+)
+            
           ],
           )
         ],

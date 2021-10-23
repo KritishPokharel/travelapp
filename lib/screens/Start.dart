@@ -50,79 +50,153 @@ class _StartState extends State<Start> {
       body: Container(
         child: Column(
           children: <Widget>[
-            SizedBox(height: 35.0),
+            Padding(padding:EdgeInsets.only(top: MediaQuery.of(context).size.height*0.1),
+            child:
             Container(
-              height: MediaQuery.of(context).size.height*0.7,
+              height: MediaQuery.of(context).size.height*0.55,
+             
+          
+              width: MediaQuery.of(context).size.width,
+            
               child: Image(
                 image: AssetImage("assets/images/sathii.png"),
-                fit: BoxFit.contain,
+                fit: BoxFit.fill,
               ),
-            ),
+            )), 
             //SizedBox(height: 20),
-            RichText(
-                text: TextSpan(
-                    text: 'Welcome to ',
-                    style: TextStyle(
-                        fontSize: 25.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black),
-                    children: <TextSpan>[
-                  TextSpan(
-                      text: 'Sathi',
-                      style: TextStyle(
-                          fontSize: 30.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blue))
-                ])),
-            SizedBox(height: 30.0),
-            // Text(
-            //   'Hamro Hath Sadhai ko Sath',
-            //   style: TextStyle(color: Colors.black),
-            // ),
-            // SizedBox(height: 30.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                RaisedButton(
-                    padding: EdgeInsets.only(left: 30, right: 30),
-                    onPressed: (){Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => Login()),
-                    );},
-                    child: Text(
-                      'LOGIN',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(0),
-                    ),
-                    color: Colors.blue),
-                SizedBox(width: 20.0),
-                RaisedButton(
-                    padding: EdgeInsets.only(left: 30, right: 30),
-                    onPressed: (){
-                      Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => SignUp()),
-                    );
-                    },
-                    child: Text(
-                      'REGISTER',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(0),
-                    ),
-                    color: Colors.blue),
-              ],
+
+           Padding(padding: EdgeInsets.only(
+             top:MediaQuery.of(context).size.height* 0.05,
+             left: MediaQuery.of(context).size.width* 0.17,
+             ),
+              child:Container(
+
+               
+                height: MediaQuery.of(context).size.height* 0.15,
+                child:Row(
+                  children:[ 
+                    InkWell(
+                      onTap: () => Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (_) =>Login()
+                                          ),
+                                        ),
+                                      
+  
+ 
+                      child:
+                  Container(
+                    height: MediaQuery.of(context).size.height* 0.07,
+                    width: MediaQuery.of(context).size.height* 0.16,
+                    
+                  decoration: BoxDecoration(
+                   color:Color(0xffB1B7EC),
+                    borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+      BoxShadow(
+        color: Colors.black,
+        spreadRadius: 1,
+        blurRadius: 0,
+        offset: Offset(0, 1), // changes position of shadow
+      ),
+    ],
+
+                  ),
+                  child: Center(
+                  
+                  child: Text('Login',
+                  style: TextStyle(
+                    fontSize:16
+                  )
+                  ),),
+
+                  )) ,
+                  SizedBox(width: 30.0),
+                 InkWell(
+                   onTap:() => Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (_) => SignUp()
+                                          ),
+                                        ),
+                                      
+                   child: Container(
+                    height: MediaQuery.of(context).size.height* 0.07,
+                    width: MediaQuery.of(context).size.height* 0.16,
+                    
+                  decoration: BoxDecoration(
+                    color:Color(0xffB1B7EC),
+                    borderRadius: BorderRadius.circular(20),
+                    
+                    boxShadow: [
+      BoxShadow(
+        color: Colors.black,
+        spreadRadius: 1,
+        blurRadius: 0,
+        offset: Offset(0, 1), // changes position of shadow
+      ),
+    ],
+
+                  ),
+                  child: Center(child: Text('Sign Up',
+                  style: TextStyle(
+                    fontSize:16
+                  )
+                  ),),
+
+                  )) ,  
+                  
+
+                  ]
+                ),
+                
+
+             
+             
             ),
-            SizedBox(height: 20.0),
+
+             ),
+            
+             InkWell(
+                   onTap:() => Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (_) => SignUp()
+                                          ),
+                                        ),
+                                      
+                   child: Container(
+                    height: MediaQuery.of(context).size.height* 0.08,
+                    width: MediaQuery.of(context).size.width* 0.6,
+                    
+                  decoration: BoxDecoration(
+                    color:Color(0xffB1B7EC),
+                    borderRadius: BorderRadius.circular(20),
+                    
+                    boxShadow: [
+      BoxShadow(
+        color: Colors.black,
+        spreadRadius: 1,
+        blurRadius: 0,
+        offset: Offset(0, 1), // changes position of shadow
+      ),
+    ],
+
+                  ),
+                  child:
+                  Row(children: [
+                    SizedBox(width:15),
+                    Icon(Icons.account_circle_outlined),
+                    SizedBox(width:15),
+
+                   Center(child: Text('Sign Up with Google',
+                  style: TextStyle(
+                    fontSize:16
+                  )
+                  ),)],),
+
+                  ))
             // SignInButton(Buttons.Google,
             //     text: "Sign up with Google", onPressed: (){})
           ],

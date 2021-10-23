@@ -88,11 +88,13 @@ class _SignUpState extends State<SignUp> {
                   children: <Widget>[
                     Container(
                       child: TextFormField(
+                        
                           // ignore: missing_return
                           validator: (input) {
                             if (input.isEmpty) return 'Enter Name';
                           },
                           decoration: InputDecoration(
+                                    border: InputBorder.none,
                             labelText: 'Name',
                             prefixIcon: Icon(Icons.person),
                           ),
@@ -105,6 +107,7 @@ class _SignUpState extends State<SignUp> {
                             if (input.isEmpty) return 'Enter Email';
                           },
                           decoration: InputDecoration(
+                            border: InputBorder.none,
                               labelText: 'Email',
                               prefixIcon: Icon(Icons.email)),
                           onSaved: (input) => _email = input),
@@ -112,11 +115,13 @@ class _SignUpState extends State<SignUp> {
                     Container(
                       child: TextFormField(
                           // ignore: missing_return
+                          
                           validator: (input) {
                             if (input.length < 6)
                               return 'Provide Minimum 6 Character';
                           },
                           decoration: InputDecoration(
+                            border: InputBorder.none,
                             labelText: 'Password',
                             prefixIcon: Icon(Icons.lock),
                           ),
